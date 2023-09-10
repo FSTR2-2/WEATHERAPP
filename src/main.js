@@ -1,9 +1,10 @@
-import "./global.css";
+import "./styles/global.scss";
 import Navbar from "./components/Navbar/Navbar";
 import Date from "./components/Date/Date";
 import Search from "./components/Search/Search";
 import ThemeSwitch from "./components/ThemeSwitch/ThemeSwitch";
 import DailySummary from "./components/DailySummary/DailySummary";
+import Calendar from "./components/Calendar/Calendar";
 import Overview from "./components/Overview/Overview";
 import Forecast from "./components/Forecast/Forecast";
 import AirQuality from "./components/AirQuality/AirQuality";
@@ -16,6 +17,7 @@ app.innerHTML = `
     <section id="search" class="section"></section>         <!-- someone -->
     <section id="themeSwitch" class="section"></section>    <!-- someone -->
     <section id="dailySummary" class="section"></section>   <!-- someone -->
+    <section id="calendar" class="section"></section>       <!-- someone -->
     <section id="overview" class="section"></section>       <!-- someone -->
     <section id="forecast" class="section"></section>       <!-- someone -->
     <section id="airQuality" class="section"></section>     <!-- someone -->
@@ -27,6 +29,7 @@ Date(document.querySelector("#date"));
 Search(document.querySelector("#search"));
 ThemeSwitch(document.querySelector("#themeSwitch"));
 DailySummary(document.querySelector("#dailySummary"));
+Calendar(document.querySelector("#calendar"));
 Overview(document.querySelector("#overview"));
 Forecast(document.querySelector("#forecast"));
 AirQuality(document.querySelector("#airQuality"));

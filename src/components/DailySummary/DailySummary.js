@@ -1,3 +1,8 @@
+import './DailySummary.css';
+
+
+
+
 const DailySummary = (element) => {
  element.innerHTML = `
   <div>DailySummary</div>
