@@ -1,6 +1,7 @@
 $primary-color-light: #86C5FF;
 $secondary-color-light: #D9D9D9;
-$text-color-light: #333;
+$text-color-light: #393737;
+$black-text-color-light: #000;
 $background-color-light: #fff;
 
 $primary-color-dark: #9b59b6;
@@ -8,3 +9,11 @@ $secondary-color-dark: #f39c12;
 $text-color-dark: #fff;
 $background-color-dark: #333;
 
+// ! Font weight
+
+$font-montserrat: 'Montserrat', sans-serif;
+
+$regular: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: '700';

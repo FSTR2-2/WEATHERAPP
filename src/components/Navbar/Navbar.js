@@ -15,7 +15,7 @@ async function getData(url) {
 const Navbar = async (element) => {
   const data = await getData();
 
-  console.log(data);
+  // console.log(data);
 
   element.innerHTML = `
   <div>

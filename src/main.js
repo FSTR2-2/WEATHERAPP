@@ -12,15 +12,15 @@ import AirQuality from "./components/AirQuality/AirQuality";
 const app = document.querySelector("#app");
 app.innerHTML = `
   <div id="app-container">
-    <nav id="navbar" class="section"></nav>                 <!-- someone -->
-    <section id="date" class="section"></section>           <!-- someone -->
-    <section id="search" class="section"></section>         <!-- someone -->
-    <section id="themeSwitch" class="section"></section>    <!-- someone -->
-    <section id="dailySummary" class="section"></section>   <!-- someone -->
-    <section id="calendar" class="section"></section>       <!-- someone -->
-    <section id="overview" class="section"></section>       <!-- someone -->
-    <section id="forecast" class="section"></section>       <!-- someone -->
-    <section id="airQuality" class="section"></section>     <!-- someone -->
+    <nav id="navbar" class="section"></nav>                
+    <section id="date" class="section"></section>          
+    <section id="search" class="section"></section>        
+    <section id="themeSwitch" class="section"></section>   
+    <section id="dailySummary" class="section"></section>  
+    <section id="calendar" class="section"></section>      
+    <section id="overview" class="section"></section>      
+    <section id="forecast" class="section"></section>      
+        
   </div>
 `;
 

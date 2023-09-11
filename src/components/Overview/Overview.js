@@ -1,6 +1,12 @@
+import AirQuality from '../AirQuality/AirQuality';
+
 const Overview = (element) => {
  element.innerHTML = `
-  <div>Overview</div>
+  <div class="main-container">
+  Overview
+   <div id="airQuality" class="container"></div>
+  </div>
+
  `;
 }
 
