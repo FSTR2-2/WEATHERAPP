@@ -75,7 +75,7 @@ function createHourlyInfoCards(hourlyData) {
  }
  const cardsArray = [];
  for(let i = 0; i < 24; i++) {
-  let hour = i < 12 ? `${i} am` : `${i} pm`;
+  let hour = i < 12 ? `${i} am` : i === 12 ? `${i} pm` : `${i - 12} pm`;
   let iconCode = hourlyData.weathercode[i];
   let temperature = Math.round(hourlyData.temperature_2m[i]);
   const card = `
@@ -85,7 +85,7 @@ function createHourlyInfoCards(hourlyData) {
      <span class="icon-box">
       ${icons[iconCode]}
      </span>
-     <span class="icon">${temperature}&deg</span>
+     <span class="temperature">${temperature}&deg</span>
     </div>
    </li>
   `
