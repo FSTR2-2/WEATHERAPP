@@ -1,5 +1,7 @@
 #dailySummary {
   background: #86C5FF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background: transparent;
 }
 #dailySummary .container {
   display: flex;
@@ -8,6 +10,18 @@
   width: 100%;
   height: 100%;
   padding: 1rem;
+  position: relative;
+}
+#dailySummary .container .bg-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.875rem;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 #dailySummary .container .top-side {
   width: 100%;
@@ -16,11 +30,14 @@
   gap: 2rem;
 }
 #dailySummary .container .top-side .illustration-box {
-  width: 270px;
-  height: 115px;
-  background: #d9d9d9;
+  max-width: 20rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
   border-radius: 1rem;
   align-self: center;
+  display: flex;
+  justify-content: center;
 }
 #dailySummary .container .top-side .location-box {
   display: flex;
@@ -66,28 +83,23 @@
   font-size: 1rem;
   color: #000;
 }
-#dailySummary .container .bottom-side {
+#dailySummary .container #slider {
   width: 100%;
   flex: 1;
+  user-select: none;
   overflow: hidden;
+  position: relative;
 }
-#dailySummary .container .bottom-side::-webkit-scrollbar {
-  width: 100px;
-  height: 5px;
+#dailySummary .container #slider .tns-visually-hidden {
+  display: none;
 }
-#dailySummary .container .bottom-side::-webkit-scrollbar-track {
-  background: none;
-}
-#dailySummary .container .bottom-side::-webkit-scrollbar-thumb {
-  background: white;
-  border-radius: 5px;
-}
-#dailySummary .container .bottom-side .hourly-info-list {
+#dailySummary .container #slider #cardWrapper {
   display: flex;
   gap: 1rem;
   list-style: none;
+  transition: transform 0.3s ease-in-out;
 }
-#dailySummary .container .bottom-side .hourly-info-list .list-item {
+#dailySummary .container #slider #cardWrapper .card {
   min-width: 6rem;
   width: 100%;
   height: 100%;
@@ -95,7 +107,7 @@
   border-radius: 1rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-#dailySummary .container .bottom-side .hourly-info-list .list-item .card-container {
+#dailySummary .container #slider #cardWrapper .card .card-container {
   width: 100%;
   height: 100%;
   padding: 1rem;
@@ -105,12 +117,12 @@
   align-items: center;
   gap: 1rem;
 }
-#dailySummary .container .bottom-side .hourly-info-list .list-item .card-container .icon-box {
+#dailySummary .container #slider #cardWrapper .card .card-container .icon-box {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#dailySummary .container .bottom-side .hourly-info-list .list-item .card-container .icon-box i {
+#dailySummary .container #slider #cardWrapper .card .card-container .icon-box i {
   font-size: 2rem;
 }
 

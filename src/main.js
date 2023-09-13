@@ -36,3 +36,6 @@ Overview(document.querySelector("#overview"));
 Forecast(document.querySelector("#forecast"));
 AirQuality(document.querySelector("#airQuality"));
 
+
+
+
