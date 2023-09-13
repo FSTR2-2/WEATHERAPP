@@ -1,6 +1,8 @@
+import assets from '../../assets/assets'
+
 const Calendar = (element) => {
  element.innerHTML = `
-  <div>Calendar</div>
+  <div>Calender</div>
  `;
 }
 
