@@ -7,7 +7,7 @@ import DailySummary from "./components/DailySummary/DailySummary";
 import Calendar from "./components/Calendar/Calendar";
 import Overview from "./components/Overview/Overview";
 import Forecast from "./components/Forecast/Forecast";
-import AirQuality from "./components/AirQuality/AirQuality";
+import AirQuality from "./components/Overview/AirQuality/AirQuality";
 import DegreeSwitch from "./components/DegreeSwitch/DegreeSwitch";
 
 const app = document.querySelector("#app");
