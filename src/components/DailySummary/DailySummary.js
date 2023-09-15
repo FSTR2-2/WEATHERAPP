@@ -15,7 +15,7 @@ const DailySummary = async (element) => {
    <img class="bg-img" src="${assets.bg.ClearSunset}">
    <div class="top-side">
     <div class="illustration-box">
-      <img src="${assets.vectors.Sunny}">
+      <img src="${assets.vectors.PartialCloud}">
     </div>
     <div class="location-box">
      <span class="city">${data.area}</span>
