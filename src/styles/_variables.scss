@@ -1,14 +1,18 @@
-$primary-color-light: #86C5FF;
-$secondary-color-light: #d9d9d9;
-$secondary-color-light-50: rgba(217, 217, 217, 50%);
+$primary-color-light: #f97f2a;
+$secondary-color-light: rgba(255, 255, 255);
+$secondary-color-light-50: rgba(255, 255, 255, 50%);
 $text-color-light: #393737;
 $black-text-color-light: #000;
-$background-color-light: #fff;
+$background-color-light: #e1e3e8;
+$background-color-light-90: rgba(255, 255, 255, 90%);
 
-$primary-color-dark: #9b59b6;
-$secondary-color-dark: #f39c12;
-$text-color-dark: #fff;
-$background-color-dark: #333;
+$primary-color-dark: #f97f2a;
+$secondary-color-dark: rgba(255, 255, 255, 20%);
+$secondary-color-dark-50: 393737;
+$text-color-dark: #ececec;
+$white-text-color-dark: #fff;
+$background-color-dark: #393737;
+$background-color-dark-90: rgba(255, 255, 255, 90%);
 
 // ! Font weight
 
@@ -17,4 +21,4 @@ $font-montserrat: 'Montserrat', sans-serif;
 $regular: 400;
 $medium: 500;
 $semiBold: 600;
-$bold: '700';
+$bold: 700;

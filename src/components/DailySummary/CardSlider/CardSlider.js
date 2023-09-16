@@ -14,7 +14,7 @@ const CardSlider = (hourlyData) => {
     let iconCode = hourlyData.weathercode[i];
     let temperature = Math.round(hourlyData.temperature_2m[i]);
     const card = `
-   <div class="card">
+   <div class="card ${hour === currentHour ? 'currentHour': ''}">
     <div class="card-container">
      <span class="time">${hour}</span>
      <span class="icon-box">
