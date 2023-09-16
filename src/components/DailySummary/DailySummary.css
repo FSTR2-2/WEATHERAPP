@@ -12,6 +12,19 @@
   padding: 1rem 0.5rem 0 0.5rem;
   position: relative;
 }
+#dailySummary .container .white-layer {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.875rem;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
+}
 #dailySummary .container .bg-img {
   width: 100%;
   height: 100%;
@@ -21,7 +34,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
 }
 #dailySummary .container .top-side {
   grid-row: 1/3;
@@ -29,12 +41,12 @@
   height: 100%;
   display: flex;
   gap: 2rem;
+  position: relative;
 }
 #dailySummary .container .top-side .illustration-box {
-  max-width: 20rem;
+  max-width: 25rem;
   width: 100%;
   height: 100%;
-  padding: 1rem;
   border-radius: 1rem;
   align-self: center;
   display: flex;

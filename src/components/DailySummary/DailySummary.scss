@@ -12,10 +12,26 @@
 
   width: 100%;
   height: 100%;
-  padding: 1rem .5rem 0 .5rem;
-  
+  padding: 1rem 0.5rem 0 0.5rem;
 
   position: relative;
+
+  .white-layer {
+   width: 100%;
+   height: 100%;
+   border-radius: 1.875rem;
+
+   object-fit: cover;
+   object-position: center;
+
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 0;
+
+   background: rgba(255, 255, 255, 30%);
+   backdrop-filter: blur(2px);
+  }
 
   .bg-img {
    width: 100%;
@@ -28,7 +44,7 @@
    position: absolute;
    top: 0;
    left: 0;
-   z-index: -1;
+   
   }
 
   .top-side {
@@ -39,22 +55,22 @@
    display: flex;
    gap: 2rem;
 
+   position: relative;
+
    .illustration-box {
-    max-width: 20rem;
+    max-width: 25rem;
     width: 100%;
     height: 100%;
-    padding: 1rem;
+    // padding: 1rem;
     border-radius: 1rem;
     align-self: center;
 
     display: flex;
     justify-content: center;
 
-    // border: 1px solid white;
-
     img {
-      width: 100%;
-      height: 100%;
+     width: 100%;
+     height: 100%;
     }
    }
 
@@ -150,7 +166,7 @@
 
      &:nth-of-type(4) {
       background: $background-color-light-90;
-      transform: scale(1.1)
+      transform: scale(1.1);
      }
 
      .card-container {
@@ -164,7 +180,6 @@
       flex-direction: column;
       align-items: center;
       gap: 1rem;
-
 
       .icon-box {
        display: flex;
