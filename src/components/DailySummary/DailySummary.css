@@ -4,13 +4,26 @@
   background: transparent;
 }
 #dailySummary .container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
   gap: 1rem;
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  padding: 1rem 0.5rem 0 0.5rem;
   position: relative;
+}
+#dailySummary .container .white-layer {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.875rem;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
 }
 #dailySummary .container .bg-img {
   width: 100%;
@@ -21,23 +34,27 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
 }
 #dailySummary .container .top-side {
-  width: 100%;
-  flex: 1;
-  display: flex;
-  gap: 2rem;
-}
-#dailySummary .container .top-side .illustration-box {
-  max-width: 20rem;
+  grid-row: 1/3;
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+#dailySummary .container .top-side .illustration-box {
+  max-width: 25rem;
+  width: 100%;
+  height: 100%;
   border-radius: 1rem;
   align-self: center;
   display: flex;
   justify-content: center;
+}
+#dailySummary .container .top-side .illustration-box img {
+  width: 100%;
+  height: 100%;
 }
 #dailySummary .container .top-side .location-box {
   display: flex;
@@ -84,8 +101,8 @@
   color: #000;
 }
 #dailySummary .container #slider {
+  grid-row: 3/6;
   width: 100%;
-  flex: 1;
   user-select: none;
   overflow: hidden;
   position: relative;
@@ -98,6 +115,8 @@
   gap: 1rem;
   list-style: none;
   transition: transform 0.3s ease-in-out;
+  position: absolute;
+  bottom: 1rem;
 }
 #dailySummary .container #slider #cardWrapper .card {
   min-width: 6rem;
@@ -106,6 +125,10 @@
   background: rgba(217, 217, 217, 0.5);
   border-radius: 1rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#dailySummary .container #slider #cardWrapper .card:nth-of-type(4) {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
 }
 #dailySummary .container #slider #cardWrapper .card .card-container {
   width: 100%;

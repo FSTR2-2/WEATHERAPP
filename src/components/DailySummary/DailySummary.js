@@ -10,12 +10,16 @@ const DailySummary = async (element) => {
  const currentHour = currentDate.getHours();
  const data = await getData(city);
 
+ const weatherCode = data.hourly.weathercode[currentHour]
+ 
+
  element.innerHTML = `
   <div class="container"> 
-   <img class="bg-img" src="${assets.sunshine}">
+   <img class="bg-img" src="${assets.bg[weatherCode]}">
+   <div class="white-layer"></div>
    <div class="top-side">
     <div class="illustration-box">
-      <img src="${assets.partialCloud1}">
+      <img src="${assets.vectors[weatherCode]}">
     </div>
     <div class="location-box">
      <span class="city">${data.area}</span>
