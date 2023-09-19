@@ -1,0 +1,26 @@
+#dateTime {
+  background: none;
+}
+#dateTime .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 2rem;
+  font-weight: bold;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#dateTime .container .date {
+  font-size: 2.75rem;
+}
+#dateTime .container .time {
+  font-size: 2.5rem;
+}
+#dateTime .container .time span {
+  font-size: 1.5rem;
+}
+
+
+
+/*# sourceMappingURL=DateTime.css.map */
