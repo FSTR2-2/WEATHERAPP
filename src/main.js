@@ -1,6 +1,6 @@
 import "./styles/global.scss";
 import Navbar from "./components/Navbar/Navbar";
-import Date from "./components/Date/Date";
+import DateTime from "./components/DateTime/DateTime";
 import Search from "./components/Search/Search";
 import ThemeSwitch from "./components/ThemeSwitch/ThemeSwitch";
 import DailySummary from "./components/DailySummary/DailySummary";
@@ -14,7 +14,7 @@ const app = document.querySelector("#app");
 app.innerHTML = `
   <div id="app-container">
     <nav id="navbar" class="section"></nav>                
-    <section id="date" class="section"></section>          
+    <section id="dateTime" class="section"></section>          
     <section id="search" class="section"></section>        
     <section id="degreeSwitch" class="section"></section>   
     <section id="themeSwitch" class="section"></section>   
@@ -26,7 +26,7 @@ app.innerHTML = `
 `;
 
 Navbar(document.querySelector("#navbar"));
-Date(document.querySelector("#date"));
+DateTime(document.querySelector("#dateTime"));
 Search(document.querySelector("#search"));
 ThemeSwitch(document.querySelector("#themeSwitch"));
 DegreeSwitch(document.querySelector("#degreeSwitch"));
