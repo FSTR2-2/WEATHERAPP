@@ -1,4 +1,4 @@
-import AirQuality from '../AirQuality/AirQuality';
+import AirQuality from './AirQuality/AirQuality';
 
 const Overview = (element) => {
  element.innerHTML = `
