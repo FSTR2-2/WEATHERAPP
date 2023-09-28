@@ -1,4 +1,6 @@
 import "./styles/global.scss";
+import {getData} from './scripts/utils'
+
 import Navbar from "./components/Navbar/Navbar";
 import DateTime from "./components/DateTime/DateTime";
 import Search from "./components/Search/Search";
@@ -25,16 +27,27 @@ app.innerHTML = `
   </div>
 `;
 
-Navbar(document.querySelector("#navbar"));
-DateTime(document.querySelector("#dateTime"));
-Search(document.querySelector("#search"));
-ThemeSwitch(document.querySelector("#themeSwitch"));
-DegreeSwitch(document.querySelector("#degreeSwitch"));
-DailySummary(document.querySelector("#dailySummary"));
-Calendar(document.querySelector("#calendar"));
-Overview(document.querySelector("#overview"));
-Forecast(document.querySelector("#forecast"));
-AirQuality(document.querySelector("#airQuality"));
+document.addEventListener("search", async (e) => {
+	const searchCity = e.detail.searchValue;
+  renderComponents(searchCity)
+});
+
+async function renderComponents(city) {
+  const data = await getData(city);
+
+  Navbar(document.querySelector("#navbar"));
+  DateTime(document.querySelector("#dateTime"), data);
+  Search(document.querySelector("#search"));
+  ThemeSwitch(document.querySelector("#themeSwitch"));
+  DegreeSwitch(document.querySelector("#degreeSwitch"));
+  DailySummary(document.querySelector("#dailySummary"), data);
+  Calendar(document.querySelector("#calendar"));
+  Overview(document.querySelector("#overview"), data);
+  Forecast(document.querySelector("#forecast"), data);
+  AirQuality(document.querySelector("#airQuality"));
+}
+
+renderComponents();
 
 
 
