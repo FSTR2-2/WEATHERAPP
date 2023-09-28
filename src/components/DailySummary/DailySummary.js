@@ -4,15 +4,12 @@ import CardSlider from "./CardSlider/CardSlider";
 import assets from "../../assets/assets";
 import { tns } from "../../../node_modules/tiny-slider/src/tiny-slider";
 
-const DailySummary = async (element) => {
- const city = "istanbul";
+const DailySummary = async (element, data) => {
  const currentDate = new Date();
  const currentHour = currentDate.getHours();
- const data = await getData(city);
 
- const weatherCode = data.hourly.weathercode[currentHour]
+ const weatherCode = data.hourly.weathercode[currentHour];
  
-
  element.innerHTML = `
   <div class="container"> 
    <img class="bg-img" src="${assets.bg[weatherCode]}">
@@ -61,9 +58,6 @@ const DailySummary = async (element) => {
   mouseDrag: true,
   swipeAngle: false,
   speed: 400,
-  // autoWidth: true,
-  // autoHeight: true,
-  // viewportMax: true,
   controls: false,
   nav: false,
   responsive: {

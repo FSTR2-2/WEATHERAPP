@@ -1,4 +1,4 @@
-async function getData(city) {
+async function getData(city='istanbul') {
   const locationData = await getLocationData(city);
   const { latitude, longitude, area, country } = locationData;
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weathercode,relativehumidity_2m&daily=weathercode&current_weather=true&timezone=auto&forecast_days=2`;
@@ -13,6 +13,7 @@ async function getData(city) {
 }
 
 async function getLocationData(city) {
+  if(!city) return;
   city = city.trim().toLowerCase();
   const url = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en&format=json`;
   const data = await fetch(url)
