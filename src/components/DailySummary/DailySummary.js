@@ -1,5 +1,4 @@
 import "./DailySummary.css";
-import { getData } from "../../scripts/utils";
 import CardSlider from "./CardSlider/CardSlider";
 import assets from "../../assets/assets";
 import { tns } from "../../../node_modules/tiny-slider/src/tiny-slider";
