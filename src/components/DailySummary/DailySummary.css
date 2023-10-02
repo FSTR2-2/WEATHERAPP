@@ -1,5 +1,5 @@
 #dailySummary {
-  background: #86C5FF;
+  background: #f97f2a;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: transparent;
 }
@@ -16,21 +16,26 @@
   width: 100%;
   height: 100%;
   border-radius: 1.875rem;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
   background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
 #dailySummary .container .bg-img {
   width: 100%;
   height: 100%;
   border-radius: 1.875rem;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -103,7 +108,9 @@
 #dailySummary .container #slider {
   grid-row: 3/6;
   width: 100%;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   overflow: hidden;
   position: relative;
 }
@@ -122,7 +129,7 @@
   min-width: 6rem;
   width: 100%;
   height: 100%;
-  background: rgba(217, 217, 217, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 1rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -148,5 +155,3 @@
 #dailySummary .container #slider #cardWrapper .card .card-container .icon-box i {
   font-size: 2rem;
 }
-
-/*# sourceMappingURL=DailySummary.css.map */

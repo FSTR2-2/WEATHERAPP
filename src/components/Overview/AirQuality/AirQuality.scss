@@ -1,0 +1,53 @@
+@import "../../../styles/variables";
+
+#airQuality {
+  display: flex;
+  border-radius: 30px;
+  background: $background-color-light;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  max-height: max-content;
+  justify-content: center;
+  margin-top: 2rem;
+  .Air-info {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    .info-box {
+      
+    }
+    .card-list {
+      border: solid 1px yellow;
+      .card {
+        border: solid 1px rgb(0, 0, 0);
+        width: 50px;
+        height: 50px;
+        border-radius: 30px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        .degree {
+          color: #fff;
+          text-align: center;
+          font-family: Montserrat;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          border: solid 1px red;
+        }
+        .units {
+          color: #fff;
+          text-align: center;
+          font-family: Montserrat;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          border: solid 1px red;
+        }
+      }
+    }
+  }
+}

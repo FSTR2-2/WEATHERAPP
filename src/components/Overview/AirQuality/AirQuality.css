@@ -1,0 +1,50 @@
+#airQuality {
+  display: flex;
+  border-radius: 30px;
+  background: #e1e3e8;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  max-height: max-content;
+  justify-content: center;
+  margin-top: 2rem;
+}
+#airQuality .Air-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+#airQuality .Air-info .card-list {
+  border: solid 1px yellow;
+}
+#airQuality .Air-info .card-list .card {
+  border: solid 1px rgb(0, 0, 0);
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#airQuality .Air-info .card-list .card .degree {
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: solid 1px red;
+}
+#airQuality .Air-info .card-list .card .units {
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: solid 1px red;
+}
+
+/*# sourceMappingURL=AirQuality.css.map */
