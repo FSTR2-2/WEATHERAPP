@@ -27,6 +27,9 @@
 #search .search-container #searchInput:focus-visible {
   outline: 3px solid black;
 }
+#search .search-container #searchInput::-moz-placeholder {
+  color: #222121;
+}
 #search .search-container #searchInput::placeholder {
   color: #222121;
 }
@@ -42,5 +45,3 @@
 #search .search-container button i {
   font-size: 1.5rem;
 }
-
-/*# sourceMappingURL=Search.css.map */

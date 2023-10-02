@@ -44,7 +44,7 @@ async function renderComponents(city) {
   Calendar(document.querySelector("#calendar"));
   Overview(document.querySelector("#overview"), data);
   Forecast(document.querySelector("#forecast"), data);
-  AirQuality(document.querySelector("#airQuality"));
+  AirQuality(document.querySelector("#airQuality"), data);
 }
 
 renderComponents();
