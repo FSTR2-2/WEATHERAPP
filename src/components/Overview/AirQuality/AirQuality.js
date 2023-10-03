@@ -13,7 +13,7 @@ const AirQuality = async (element, data) => {
   const no2 = data.hourly.nitrogen_dioxide[currentHour];
   const o3 = data.hourly.ozone[currentHour];
   const co = data.hourly.carbon_monoxide[currentHour];
-  const european_aqi = aqData.hourly.european_aqi[currentHour];
+  const european_aqi = data.hourly.european_aqi[currentHour];
 
   function colorPicker(pm2_5,pm10,so2,no2,o3,co){
     const airColor = ["#50F0E6","#50CCAA","#F0E641","#FF5050","#960032","#7D2181"];
@@ -81,9 +81,9 @@ const AirQuality = async (element, data) => {
 
   function AQIcalc(european_aqi){
     const color= ["#50F0E6","#50CCAA","#F0E641","#FF5050","#960032"];
-    const aqiColor = document.getElementsByClassName("info-title","info-img");
+    const aqiColor = document.querySelector(".color");
     const aqiInfo = document.getElementsByClassName("info-text");
-    aqiColor.style.backgroundColor = (
+    aqiColor.style.color = (
         european_aqi >= 0 && european_aqi <=20 ? color[0]:
         european_aqi > 20 && european_aqi <=40 ? color[1]:
         european_aqi > 40 && european_aqi <=60 ? color[2]:
@@ -108,7 +108,59 @@ const AirQuality = async (element, data) => {
         "Null"
     );
   }
-
+  function getCardData(item){
+    switch (item){
+        case "pm2_5":
+            return {
+                degree:pm2_5,
+                units:"PM2.5",
+                id:"pm2_5",
+            }
+        case "pm10":
+            return {
+                degree:pm10,
+                units:"PM10",
+                id:"pm10",
+            }
+        case "so2":
+            return {
+                degree:so2,
+                units:"SO2",
+                id:"so2",
+            }
+        case "no2":
+            return {
+                degree:no2,
+                units:"NO2",
+                id:"no2",
+            }
+        case "o3":
+            return {
+                degree:o3,
+                units:"O3",
+                id:"o3",
+            }
+        case "co":
+            return {
+                degree:co,
+                units:"CO",
+                id:"co",
+            }
+    }
+}
+  const airQualityList = ["pm2_5","pm10","so2","no2","o3","co"]
+  const airQualityListElements = airQualityList.map((item) => {
+    const cardsData = getCardData(item);
+    
+    const liElement = `
+        <li class="card" id=${cardsData.id}>
+            <span class="degree">${cardsData.degree}</span>
+            <span class="units">${cardsData.units}</span>
+            <span class="bg-units"></span>
+        </li>
+    `
+    return liElement;
+})
 
 
 
@@ -116,44 +168,17 @@ const AirQuality = async (element, data) => {
   <div class="Air-info">
     <div class="info-box">
         <span>Air Quality</span>
-        <img class="info-img" src="../../../assets/Vectors/Airquality.svg">
-        <span class="info-title"></span>
+        <i class="fi fi-sr-wind color"></i>
+        <span class="info-title color"></span>
         <span class="info-text"></span>
     </div>
-    <div class="card-list">
-        <div calss="card">
-            <span class="degree">${data.hourly.pm2_5[currentHour]}</span>
-            <span class="units">PM2.5</span>
-            <span class="bg-units id="pm2_5" ></span>
-        </div>
-        <div calss="card">
-            <span class="degree">${data.hourly.pm10[currentHour]}</span>
-            <span class="units">PM10</span>
-            <span class="bg-units" id="pm10"></span>
-        </div>
-        <div calss="card">
-            <span class="degree">${data.hourly.sulphur_dioxide[currentHour]}</span>
-            <span class="units">SO2</span>
-            <span class="bg-units" id="so2"></span>
-        </div>
-        <div calss="card">
-            <span class="degree">${data.hourly.nitrogen_dioxide[currentHour]}</span>
-            <span class="units">NO2</span>
-            <span class="bg-units" id="no2" style></span>
-        </div>
-        <div calss="card">
-            <span class="degree">${data.hourly.ozone[currentHour]}</span>
-            <span class="units">O3</span>
-            <span class="bg-units" id="o3"></span>
-        </div>
-        <div calss="card">
-            <span class="degree">${data.hourly.carbon_monoxide[currentHour]}</span>
-            <span class="units">CO</span>
-            <span class="bg-units" id="co"></span>
-        </div>
-    </div>
+    <ul class="card-list">
+        ${airQualityListElements.join("")}
+    </ul>
+
   </div>
  `;
+ colorPicker(pm2_5,pm10,so2,no2,o3,co);
 };
 
 export default AirQuality;

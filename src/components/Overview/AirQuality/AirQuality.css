@@ -17,7 +17,7 @@
   width: 100%;
 }
 #airQuality .Air-info .card-list {
-  border: solid 1px yellow;
+  list-style: none;
 }
 #airQuality .Air-info .card-list .card {
   border: solid 1px rgb(0, 0, 0);
