@@ -75,5 +75,11 @@
   font-weight: 600;
   line-height: normal;
 }
+#overview .main-container .o-bottom-side {
+  display: none;
+}
+#overview .main-container .selected-container {
+  display: flex;
+}
 
 /*# sourceMappingURL=Overview.css.map */

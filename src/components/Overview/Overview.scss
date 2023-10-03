@@ -83,6 +83,11 @@
         }
       }
     }
-     
+    .o-bottom-side{
+      display: none;
+    }
+    .selected-container{
+      display: flex;
+    }
   }
 }
