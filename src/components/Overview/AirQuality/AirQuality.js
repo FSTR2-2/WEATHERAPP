@@ -82,7 +82,8 @@ const AirQuality = async (element, data) => {
   function AQIcalc(european_aqi){
     const color= ["#50F0E6","#50CCAA","#F0E641","#FF5050","#960032"];
     const aqiColor = document.querySelector(".color");
-    const aqiInfo = document.getElementsByClassName("info-text");
+    const aqiColor2 = document.querySelector(".color2");
+    const aqiInfo = document.querySelector(".info-text");
     aqiColor.style.color = (
         european_aqi >= 0 && european_aqi <=20 ? color[0]:
         european_aqi > 20 && european_aqi <=40 ? color[1]:
@@ -91,7 +92,15 @@ const AirQuality = async (element, data) => {
         european_aqi > 80 && european_aqi <=100 ? color[4]:
         "#3CD087"
     );
-    aqiColor.textContent = (
+    aqiColor2.style.color = (
+        european_aqi >= 0 && european_aqi <=20 ? color[0]:
+        european_aqi > 20 && european_aqi <=40 ? color[1]:
+        european_aqi > 40 && european_aqi <=60 ? color[2]:
+        european_aqi > 60 && european_aqi <=80 ? color[3]:
+        european_aqi > 80 && european_aqi <=100 ? color[4]:
+        "#3CD087"
+    );
+    aqiColor2.textContent = (
         european_aqi >= 0 && european_aqi <=20 ? "Good":
         european_aqi > 20 && european_aqi <=40 ? "Fair":
         european_aqi > 40 && european_aqi <=60 ? "Moderate":
@@ -156,7 +165,6 @@ const AirQuality = async (element, data) => {
         <li class="card" id=${cardsData.id}>
             <span class="degree">${cardsData.degree}</span>
             <span class="units">${cardsData.units}</span>
-            <span class="bg-units"></span>
         </li>
     `
     return liElement;
@@ -167,18 +175,22 @@ const AirQuality = async (element, data) => {
   element.innerHTML = `
   <div class="Air-info">
     <div class="info-box">
-        <span>Air Quality</span>
-        <i class="fi fi-sr-wind color"></i>
-        <span class="info-title color"></span>
-        <span class="info-text"></span>
+        <span class="title">Air Quality</span>
+        <div class="order">
+            <i class="fi fi-sr-wind color"></i>
+            <div class="order2">
+                <span class="info-title color2"></span>
+                <span class="info-text">text</span>
+            </div>
+        </div>
     </div>
     <ul class="card-list">
         ${airQualityListElements.join("")}
     </ul>
-
   </div>
  `;
  colorPicker(pm2_5,pm10,so2,no2,o3,co);
+ AQIcalc(european_aqi);
 };
 
 export default AirQuality;
