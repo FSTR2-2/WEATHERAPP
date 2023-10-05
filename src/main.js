@@ -11,6 +11,7 @@ import Overview from "./components/Overview/Overview";
 import Forecast from "./components/Forecast/Forecast";
 import AirQuality from "./components/Overview/AirQuality/AirQuality";
 import DegreeSwitch from "./components/DegreeSwitch/DegreeSwitch";
+import UvIndex from "./components/Overview/UvIndex/UvIndex";
 
 const app = document.querySelector("#app");
 app.innerHTML = `
@@ -45,6 +46,8 @@ async function renderComponents(city) {
   Overview(document.querySelector("#overview"), data);
   Forecast(document.querySelector("#forecast"), data);
   AirQuality(document.querySelector("#airquality"), data);
+  UvIndex(document.querySelector("#uvindex"), data);
+
 }
 
 renderComponents();

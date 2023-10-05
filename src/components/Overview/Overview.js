@@ -29,7 +29,7 @@ const Overview = (element) => {
     
    </div>
    <div id="airquality" class="o-bottom-side selected-container"></div>
-   <div id="uvindex" class="o-bottom-side ">asd</div>
+   <div id="uvindex" class="o-bottom-side " ></div>
    <div id="rainfall" class="o-bottom-side ">fg</div>
    <div id="humidity" class="o-bottom-side ">1234</div>
   </div>
