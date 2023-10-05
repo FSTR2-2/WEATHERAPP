@@ -14,13 +14,7 @@ const Search = (element) => {
 
 	const searchButton = document.getElementById("searchBtn");
 	const searchInput = document.getElementById("searchInput");
-	const suggestionsContainer = document.getElementById(
-		"suggestions-container"
-	);
-
-	// const api_key = "AIzaSyDEopPHQsewia3a5VX42xOX8nQNEqeYeEo";
-
-	const autocompleteService = new google.maps.places.AutocompleteService();
+	
 
 	searchInput.addEventListener("input", async () => {
 		const inputValue = searchInput.value.trim();
