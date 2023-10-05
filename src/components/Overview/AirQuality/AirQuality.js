@@ -3,8 +3,6 @@ import "./AirQuality.css";
 
 
 const AirQuality = async (element, data) => {
-  console.log(data);
-  const city = "istanbul";
   const currentDate = new Date();
   const currentHour = currentDate.getHours();
   const pm2_5 = data.hourly.pm2_5[currentHour];
@@ -157,7 +155,7 @@ const AirQuality = async (element, data) => {
             }
     }
 }
-  const airQualityList = ["pm2_5","pm10","so2","no2","o3","co"]
+  const airQualityList = ["pm2_5","pm10","so2","no2","o3","co"];
   const airQualityListElements = airQualityList.map((item) => {
     const cardsData = getCardData(item);
     
@@ -166,7 +164,7 @@ const AirQuality = async (element, data) => {
             <span class="degree">${cardsData.degree}</span>
             <span class="units">${cardsData.units}</span>
         </li>
-    `
+    `;
     return liElement;
 })
 

@@ -1,0 +1,110 @@
+#uvindex {
+  display: flex;
+  border-radius: 30px;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  max-height: max-content;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-bottom: 16px;
+}
+#uvindex .uv-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+#uvindex .uv-info .info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 32px;
+}
+#uvindex .uv-info .info-box .title-uv {
+  color: #393737;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+#uvindex .uv-info .info-box .order {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  padding-top: 16px;
+}
+#uvindex .uv-info .info-box .order .color-uv {
+  font-size: 64px;
+}
+#uvindex .uv-info .info-box .order .order2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 24px;
+}
+#uvindex .uv-info .info-box .order .order2 .info-title-uv {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+#uvindex .uv-info .info-box .order .order2 .info-text-uv {
+  padding-top: 16px;
+  color: #393737;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+#uvindex .uv-info .card-list-uv {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  height: fit-content;
+  margin-top: 32px;
+}
+#uvindex .uv-info .card-list-uv .card-uv {
+  width: 120px;
+  max-block-size: 100%;
+  height: 150px;
+  border-radius: 35px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+#uvindex .uv-info .card-list-uv .card-uv .degree {
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+#uvindex .uv-info .card-list-uv .card-uv .units {
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/*# sourceMappingURL=UvIndex.css.map */
