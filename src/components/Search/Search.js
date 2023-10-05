@@ -15,41 +15,6 @@ const Search = (element) => {
 	const searchButton = document.getElementById("searchBtn");
 	const searchInput = document.getElementById("searchInput");
 	
-
-	searchInput.addEventListener("input", async () => {
-		const inputValue = searchInput.value.trim();
-
-		if (inputValue === "") {
-			suggestionsContainer.innerHTML = "";
-			return;
-		}
-
-		autocompleteService.getPlacePredictions(
-			{
-				input: inputValue,
-				types: ["(cities)"],
-			},
-			(predictions, status) => {
-				if (status === google.maps.places.PlacesServiceStatus.OK) {
-					const citySuggestions = predictions.map((prediction) => {
-						return prediction.description;
-					});
-					displaySuggestions(citySuggestions);
-				} else {
-					console.error("Error fetching suggestions:", status);
-				}
-			}
-		);
-	});
-
-	function displaySuggestions(suggestions) {
-		const suggestionsHTML = suggestions.map((suggestion) => {
-			return `<div class=suggestion>${suggestion}</div>`;
-		}).join('');
-
-		suggestionsContainer.innerHTML = suggestionsHTML;
-	}
-
 	searchButton.addEventListener("click", () => {
 		const searchValue = searchInput.value;
 
