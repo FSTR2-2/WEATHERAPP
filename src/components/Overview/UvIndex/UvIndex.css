@@ -4,18 +4,16 @@
   max-width: 100%;
   height: 100%;
   width: 100%;
-  max-height: max-content;
+  max-height: 100%;
   justify-content: center;
   margin-top: 2rem;
-  padding-bottom: 16px;
+  padding-bottom: 32px;
 }
 #uvindex .uv-info {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
   height: 100%;
   width: 100%;
-  padding: 16px;
   background-color: #fff;
   border-radius: 30px;
 }
@@ -70,10 +68,11 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px;
   margin-right: 16px;
   height: fit-content;
-  margin-top: 32px;
+  padding-top: 16px;
 }
 #uvindex .uv-info .card-list-uv .card-uv {
   width: 120px;
