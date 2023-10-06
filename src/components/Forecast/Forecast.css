@@ -81,6 +81,7 @@
 }
 #forecast .main-container section .forecastbyday.ten li:first-child .left-side-card .temp-box.min {
   font-size: 1.5rem;
+  margin-left: -9px;
 }
 #forecast .main-container section .forecastbyday.ten li:first-child .left-side-card .temp-box.max {
   font-size: 1.9rem;
@@ -97,7 +98,7 @@
   font-size: 1.4rem;
 }
 #forecast .main-container section .forecastbyday.ten .card {
-  flex-direction: column;
+  flex-direction: column-reverse;
   width: 33%;
   height: 22%;
   font-size: 1rem;
@@ -126,16 +127,14 @@
   justify-content: space-evenly;
   align-items: center;
 }
-#forecast .main-container section .forecastbyday.ten .card .left-side-card .icon-box {
-  width: 5px;
-  height: 5px;
+#forecast .main-container section .forecastbyday.ten .card .left-side-card span:first-child {
   padding-right: 15px;
 }
 #forecast .main-container section .forecastbyday.ten .card .left-side-card .temp-box.min {
   font-size: 0.8rem;
 }
 #forecast .main-container section .forecastbyday.ten .card .left-side-card .temp-box.max {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 #forecast .main-container section .forecastbyday .card {
   font-size: 1.9rem;

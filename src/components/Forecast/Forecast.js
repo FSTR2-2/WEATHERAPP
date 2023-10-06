@@ -49,12 +49,12 @@ const Forecast = async (element, data) => {
           <h5>Forecasts</h5>
         </div>
         <div class="day-filter">
-          <button id="threeDaysBtn">3 Days</button>
+          <button id="threeDaysBtn" class="selectedBtn">3 Days</button>
           <button id="tenDaysBtn">10 Days</button>
         </div>
       </div>
       
-      <ul class="forecastbyday ten">
+      <ul class="forecastbyday ten hidden">
         ${cardList.join("")}
       </ul>
 
@@ -68,31 +68,35 @@ const Forecast = async (element, data) => {
 
  //
  let selectedView = "ten";
+ const threeContainer = document.querySelector(".forecastbyday.three")
+ const tenContainer = document.querySelector(".forecastbyday.ten")
+ const threeDaysButton = document.querySelector("#threeDaysBtn");
+ const tenDaysButton = document.querySelector("#tenDaysBtn");
 
  function switchForm(e) {
   selectedView = selectedView === "ten" ? "three" : "ten";
-
-  const forecastContainers = document.querySelectorAll(".forecastbyday");
   const selectedButton = e.target;
 
-  forecastContainers.forEach((container) => {
-    if(container.classList.contains(selectedView)){
-      container.classList.remove("hidden")
-    } else {
-      container.classList.add("hidden");
-    }
-  });
+  if(selectedButton.id == "threeDaysBtn") {
+    tenContainer.classList.add("hidden");
+    threeContainer.classList.remove("hidden");
+    threeDaysButton.classList.add("selectedBtn");
+    tenDaysButton.classList.remove("selectedBtn");
+  } else {
+    threeContainer.classList.add("hidden");
+    tenContainer.classList.remove("hidden");
+    tenDaysButton.classList.add("selectedBtn");
+    threeDaysButton.classList.remove("selectedBtn");
+  }
 
-  const buttons = document.querySelectorAll(".day-filter button");
-  buttons.forEach((button) => {
-    button.classList.remove("selectedBtn");
-  });
-
-  selectedButton.classList.add("selectedBtn")
+  // const buttons = document.querySelectorAll(".day-filter button");
+  // buttons.forEach((button) => {
+  //   button.classList.remove("selectedBtn");
+  //   selectedButton.classList.add("selectedBtn")
+  // });
 
  }
- const threeDaysButton = document.querySelector("#threeDaysBtn");
- const tenDaysButton = document.querySelector("#tenDaysBtn")
+
 
  threeDaysButton.addEventListener("click",switchForm);
  tenDaysButton.addEventListener("click",switchForm);
