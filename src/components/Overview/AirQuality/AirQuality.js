@@ -108,10 +108,10 @@ const AirQuality = async (element, data) => {
     );
     aqiInfo.textContent = (
         european_aqi >= 0 && european_aqi <=20 ? "A perfect day for a walk!":
-        european_aqi > 20 && european_aqi <=40 ? "Be careful":
+        european_aqi > 20 && european_aqi <=40 ? "Be careful.":
         european_aqi > 40 && european_aqi <=60 ? "You should wear a mask.":
-        european_aqi > 60 && european_aqi <=80 ? "Don't leave if you don't have to":
-        european_aqi > 80 && european_aqi <=100 ? "Don't leave if you don't have to":
+        european_aqi > 60 && european_aqi <=80 ? "Don't leave if you don't have to.":
+        european_aqi > 80 && european_aqi <=100 ? "Don't leave if you don't have to.":
         "Null"
     );
   }
