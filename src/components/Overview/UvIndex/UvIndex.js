@@ -77,7 +77,7 @@ const UvIndex = async (element, data) => {
             <div class="order">
                 <i class="fi fi-rr-brightness color-uv"></i>
                 <div class="order2">
-                    <span class="info-title color2-uv"></span>
+                    <span class="info-title-uv color2-uv"></span>
                     <span class="info-text-uv"></span>
                 </div>
             </div>

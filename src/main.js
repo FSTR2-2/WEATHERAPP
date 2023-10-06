@@ -13,6 +13,7 @@ import AirQuality from "./components/Overview/AirQuality/AirQuality";
 import DegreeSwitch from "./components/DegreeSwitch/DegreeSwitch";
 import UvIndex from "./components/Overview/UvIndex/UvIndex";
 import Rainfall from "./components/Overview/Rainfall/Rainfall";
+import Humidity from "./components/Overview/Humidity/Humidity";
 
 const app = document.querySelector("#app");
 app.innerHTML = `
@@ -49,6 +50,7 @@ async function renderComponents(city) {
   AirQuality(document.querySelector("#airquality"), data);
   UvIndex(document.querySelector("#uvindex"), data);
   Rainfall(document.querySelector("#rainfall"), data);
+  Humidity(document.querySelector("#humidity"), data);
 }
 
 renderComponents();

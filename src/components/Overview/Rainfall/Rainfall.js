@@ -56,7 +56,7 @@ const Rainfall = async (element, data) => {
     let rainfall = data.hourly.precipitation_probability[i];
     const liElement = `
         <li class="card-rf" >
-        <span class="degree">${rainfall}</span>
+        <span class="degree">${rainfall}%</span>
         <span class="units">${hour}</span>
         </li>
     `;
@@ -66,11 +66,11 @@ const Rainfall = async (element, data) => {
   element.innerHTML = `
     <div class="rf-info">
         <div class="info-box">
-            <span class="title-rf">Uv Index</span>
+            <span class="title-rf">Rainfall</span>
             <div class="order">
-                <i class="fi fi-rr-brightness color-rf"></i>
+                <i class="fi fi-rr-cloud-rain color-rf"></i>
                 <div class="order2">
-                    <span class="info-title color2-rf"></span>
+                    <span class="info-title-rf color2-rf"></span>
                     <span class="info-text-rf"></span>
                 </div>
             </div>
