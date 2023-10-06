@@ -14,7 +14,6 @@ const Forecast = async (element, data) => {
   } 
 
   const cardList = [];
-  //console.log(newData.date)
   //console.log(dateCodes)
 
   for (let i=0; i<10; i++){
