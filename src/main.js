@@ -14,6 +14,7 @@ import DegreeSwitch from "./components/DegreeSwitch/DegreeSwitch";
 import UvIndex from "./components/Overview/UvIndex/UvIndex";
 import Rainfall from "./components/Overview/Rainfall/Rainfall";
 import Humidity from "./components/Overview/Humidity/Humidity";
+import Donation from "./components/Donation/Donation";
 
 const app = document.querySelector("#app");
 app.innerHTML = `
@@ -27,6 +28,7 @@ app.innerHTML = `
     <section id="calendar" class="section"></section>      
     <section id="overview" class="section"></section>      
     <section id="forecast" class="section"></section>        
+    <section id="donation" class="section"></section>        
   </div>
 `;
 
@@ -51,6 +53,7 @@ async function renderComponents(city) {
   UvIndex(document.querySelector("#uvindex"), data);
   Rainfall(document.querySelector("#rainfall"), data);
   Humidity(document.querySelector("#humidity"), data);
+  Donation(document.querySelector("#donation"), data);
 }
 
 renderComponents();
