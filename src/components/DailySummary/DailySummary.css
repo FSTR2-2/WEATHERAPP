@@ -16,26 +16,21 @@
   width: 100%;
   height: 100%;
   border-radius: 1.875rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
   background: rgba(255, 255, 255, 0.3);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 #dailySummary .container .bg-img {
   width: 100%;
   height: 100%;
   border-radius: 1.875rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -108,9 +103,7 @@
 #dailySummary .container #slider {
   grid-row: 3/6;
   width: 100%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   overflow: hidden;
   position: relative;
 }
@@ -145,7 +138,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.7rem;
 }
 #dailySummary .container #slider #cardWrapper .card .card-container .icon-box {
   display: flex;
@@ -155,3 +148,5 @@
 #dailySummary .container #slider #cardWrapper .card .card-container .icon-box i {
   font-size: 2rem;
 }
+
+/*# sourceMappingURL=DailySummary.css.map */

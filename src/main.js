@@ -1,5 +1,5 @@
 import "./styles/global.scss";
-import {getData} from './scripts/utils'
+import { getData } from "./scripts/utils";
 
 import Navbar from "./components/Navbar/Navbar";
 import DateTime from "./components/DateTime/DateTime";
@@ -28,30 +28,38 @@ app.innerHTML = `
   </div>
 `;
 
+let city;
+
 document.addEventListener("search", async (e) => {
-	const searchCity = e.detail.searchValue;
-  renderComponents(searchCity)
+	city = e.detail.searchValue;
+	await renderComponents(city);
 });
 
+document.addEventListener('toggleDegree', (e) => {
+	const degreeType = e.detail.degreeType;
+	renderComponents(city)
+})
+
 async function renderComponents(city) {
-  const data = await getData(city);
+	let degreeType = JSON.parse(localStorage.getItem("degreeType"));
+	if (!degreeType) {
+		localStorage.setItem("degreeType", JSON.stringify("C"));
+		degreeType = JSON.parse(localStorage.getItem("degreeType"));
+	}
 
-  Navbar(document.querySelector("#navbar"));
-  DateTime(document.querySelector("#dateTime"), data);
-  Search(document.querySelector("#search"));
-  ThemeSwitch(document.querySelector("#themeSwitch"));
-  DegreeSwitch(document.querySelector("#degreeSwitch"));
-  DailySummary(document.querySelector("#dailySummary"), data);
-  Calendar(document.querySelector("#calendar"));
-  Overview(document.querySelector("#overview"), data);
-  Forecast(document.querySelector("#forecast"), data);
-  AirQuality(document.querySelector("#airquality"), data);
-  UvIndex(document.querySelector("#uvindex"), data);
+	const data = await getData(city, degreeType);
 
+	Navbar(document.querySelector("#navbar"));
+	DateTime(document.querySelector("#dateTime"), data);
+	Search(document.querySelector("#search"));
+	ThemeSwitch(document.querySelector("#themeSwitch"));
+	DegreeSwitch(document.querySelector("#degreeSwitch"));
+	DailySummary(document.querySelector("#dailySummary"), data);
+	Calendar(document.querySelector("#calendar"));
+	Overview(document.querySelector("#overview"), data);
+	Forecast(document.querySelector("#forecast"), data);
+	AirQuality(document.querySelector("#airquality"), data);
+	UvIndex(document.querySelector("#uvindex"), data);
 }
 
 renderComponents();
-
-
-
-

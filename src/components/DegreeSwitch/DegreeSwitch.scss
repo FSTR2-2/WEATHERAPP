@@ -1,0 +1,70 @@
+#degreeSwitch {
+	#degreeBtn {
+		width: 100%;
+		height: 100%;
+		padding: 0.25rem;
+		border-radius: 2rem;
+
+		background: #393737;
+
+		display: flex;
+
+		position: relative;
+		z-index: 5;
+
+		cursor: pointer;
+
+		#toggleKey {
+			width: 50%;
+			height: 80%;
+			margin-left: 0.25rem;
+			margin-right: 0.25rem;
+			background: #d9d9d9;
+			border-radius: 2rem;
+
+			position: absolute;
+			top: 47%;
+			left: 0;
+			// left: 43%;
+			transform: translateY(-50%);
+      
+			
+			&.left {
+				left: 0;
+			}
+			
+			&.right {
+				left: 43%;
+			}
+			transition: all .3s ease-in-out;
+		}
+
+		.degree-btn {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+      position: relative;
+
+			flex: 1;
+			width: 100%;
+			height: 100%;
+
+			background: none;
+			// border: none;
+			border-radius: 2rem;
+			color: #d9d9d9;
+
+			font-weight: 600;
+			font-size: 1rem;
+
+			// cursor: pointer;
+
+			transition: all .3s ease-in-out;
+
+			&.selected {
+			  color: #393737;
+			}
+		}
+	}
+}
