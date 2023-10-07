@@ -1,6 +1,4 @@
-@import "../../../styles/variables";
-
-#airquality {
+#rainfall {
   display: flex;
   border-radius: 30px;
   max-width: 100%;
@@ -10,7 +8,7 @@
   justify-content: center;
   margin-top: 2rem;
   padding-bottom: 32px;
-  .Air-info {
+  .rf-info {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -23,7 +21,7 @@
       gap: 12px;
       padding-top: 5px;
       padding-left: 32px;
-      .title {
+      .title-rf {
         color: #393737;
         font-family: Montserrat;
         font-size: 24px;
@@ -36,7 +34,7 @@
         flex-direction: row;
         gap: 24px;
         padding-top: 16px;
-        .fi {
+        .color-rf {
           font-size: 64px;
         }
         .order2 {
@@ -44,14 +42,14 @@
           flex-direction: column;
           gap: 4px;
           padding-left: 24px;
-          .info-title {
+          .info-title-rf {
             font-family: Montserrat;
             font-size: 20px;
             font-style: normal;
             font-weight: 500;
             line-height: normal;
           }
-          .info-text {
+          .info-text-rf {
             padding-top: 16px;
             color: #393737;
             font-family: Montserrat;
@@ -63,7 +61,7 @@
         }
       }
     }
-    .card-list {
+    .card-list-rf {
       list-style: none;
       display: flex;
       flex-direction: row;
@@ -74,7 +72,7 @@
       margin-right: 16px;
       height: fit-content;
       padding-top: 16px;
-      .card {
+      .card-rf {
         width: 120px;
         max-block-size: 100%;
         height: 150px;

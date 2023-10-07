@@ -106,7 +106,11 @@ a {
 
 .section#calendar {
   grid-column: 21 / 25;
-  grid-row: 3 / 25;
+  grid-row: 3 / 13;
+}
+.section#donation {
+  grid-column: 21 / 25;
+  grid-row: 13 / 25;
 }
 
 .section#overview {

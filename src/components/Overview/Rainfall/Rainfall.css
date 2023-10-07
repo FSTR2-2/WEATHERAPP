@@ -1,4 +1,4 @@
-#airquality {
+#rainfall {
   display: flex;
   border-radius: 30px;
   max-width: 100%;
@@ -9,7 +9,7 @@
   margin-top: 2rem;
   padding-bottom: 32px;
 }
-#airquality .Air-info {
+#rainfall .rf-info {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -17,14 +17,14 @@
   background-color: #fff;
   border-radius: 30px;
 }
-#airquality .Air-info .info-box {
+#rainfall .rf-info .info-box {
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding-top: 5px;
   padding-left: 32px;
 }
-#airquality .Air-info .info-box .title {
+#rainfall .rf-info .info-box .title-rf {
   color: #393737;
   font-family: Montserrat;
   font-size: 24px;
@@ -32,29 +32,29 @@
   font-weight: 500;
   line-height: normal;
 }
-#airquality .Air-info .info-box .order {
+#rainfall .rf-info .info-box .order {
   display: flex;
   flex-direction: row;
   gap: 24px;
   padding-top: 16px;
 }
-#airquality .Air-info .info-box .order .fi {
+#rainfall .rf-info .info-box .order .color-rf {
   font-size: 64px;
 }
-#airquality .Air-info .info-box .order .order2 {
+#rainfall .rf-info .info-box .order .order2 {
   display: flex;
   flex-direction: column;
   gap: 4px;
   padding-left: 24px;
 }
-#airquality .Air-info .info-box .order .order2 .info-title {
+#rainfall .rf-info .info-box .order .order2 .info-title-rf {
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
-#airquality .Air-info .info-box .order .order2 .info-text {
+#rainfall .rf-info .info-box .order .order2 .info-text-rf {
   padding-top: 16px;
   color: #393737;
   font-family: Montserrat;
@@ -63,7 +63,7 @@
   font-weight: 500;
   line-height: normal;
 }
-#airquality .Air-info .card-list {
+#rainfall .rf-info .card-list-rf {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -75,7 +75,7 @@
   height: fit-content;
   padding-top: 16px;
 }
-#airquality .Air-info .card-list .card {
+#rainfall .rf-info .card-list-rf .card-rf {
   width: 120px;
   max-block-size: 100%;
   height: 150px;
@@ -88,7 +88,7 @@
   gap: 30px;
   flex-wrap: wrap;
 }
-#airquality .Air-info .card-list .card .degree {
+#rainfall .rf-info .card-list-rf .card-rf .degree {
   color: #fff;
   text-align: center;
   font-family: Montserrat;
@@ -97,7 +97,7 @@
   font-weight: 500;
   line-height: normal;
 }
-#airquality .Air-info .card-list .card .units {
+#rainfall .rf-info .card-list-rf .card-rf .units {
   color: #fff;
   text-align: center;
   font-family: Montserrat;
@@ -107,4 +107,4 @@
   line-height: normal;
 }
 
-/*# sourceMappingURL=AirQuality.css.map */
+/*# sourceMappingURL=Rainfall.css.map */

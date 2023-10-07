@@ -12,6 +12,9 @@ import Forecast from "./components/Forecast/Forecast";
 import AirQuality from "./components/Overview/AirQuality/AirQuality";
 import DegreeSwitch from "./components/DegreeSwitch/DegreeSwitch";
 import UvIndex from "./components/Overview/UvIndex/UvIndex";
+import Rainfall from "./components/Overview/Rainfall/Rainfall";
+import Humidity from "./components/Overview/Humidity/Humidity";
+import Donation from "./components/Donation/Donation";
 
 const app = document.querySelector("#app");
 app.innerHTML = `
@@ -25,6 +28,7 @@ app.innerHTML = `
     <section id="calendar" class="section"></section>      
     <section id="overview" class="section"></section>      
     <section id="forecast" class="section"></section>        
+    <section id="donation" class="section"></section>        
   </div>
 `;
 
@@ -41,6 +45,7 @@ document.addEventListener('toggleDegree', (e) => {
 })
 
 async function renderComponents(city) {
+
 	let degreeType = JSON.parse(localStorage.getItem("degreeType"));
 	if (!degreeType) {
 		localStorage.setItem("degreeType", JSON.stringify("C"));
@@ -60,6 +65,9 @@ async function renderComponents(city) {
 	Forecast(document.querySelector("#forecast"), data);
 	AirQuality(document.querySelector("#airquality"), data);
 	UvIndex(document.querySelector("#uvindex"), data);
+  Rainfall(document.querySelector("#rainfall"), data);
+  Humidity(document.querySelector("#humidity"), data);
+  Donation(document.querySelector("#donation"), data);
 }
 
 renderComponents();
