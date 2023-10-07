@@ -45,8 +45,8 @@ const Calendar = (element) => {
       daysElement.innerHTML = '';
 
       const currentDay = new Date().getDate();
-      const firstHighlightedDay = Math.max(currentDay - 7, 1);
-      const lastHighlightedDay = Math.min(currentDay + 7, daysInMonth);
+      const firstHighlightedDay = Math.max(currentDay, 1);
+      const lastHighlightedDay = Math.min(currentDay + 9, daysInMonth);
   
       for (let i = 1; i <= daysInMonth; i++) {
         const dayElement = document.createElement('div');
@@ -68,23 +68,26 @@ const Calendar = (element) => {
     }
 
     function registerDayClickEvents() {
-        const dayElements = document.querySelectorAll('.day');
-        dayElements.forEach((dayElement, index) => {
-          dayElement.addEventListener('click', () => {
+        const daysElement = element.querySelector('.days');  // Update to target the correct element
+        daysElement.addEventListener('click', (event) => {
+          const dayElement = event.target;
+          if (dayElement.classList.contains('highlighted-day') || dayElement.classList.contains('current-day')) {
+            const index = Array.from(daysElement.children).indexOf(dayElement);
             selectedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), index + 1);
-            updateSelectedDateDisplay();
+            updateSelectedDateDisplay(selectedDate);
       
             // Remove previously selected day highlight
-            const previouslySelectedDay = document.querySelector('.selected-day');
+            const previouslySelectedDay = daysElement.querySelector('.selected-day');
             if (previouslySelectedDay) {
               previouslySelectedDay.classList.remove('selected-day');
             }
       
             // Highlight the newly selected day
             dayElement.classList.add('selected-day');
-          });
+          }
         });
       }
+      
       createCalendar();
       updateSelectedDateDisplay();
       registerDayClickEvents();
