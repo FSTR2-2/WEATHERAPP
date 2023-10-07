@@ -1,7 +1,7 @@
 
 .calendar {
     border-radius: 8px;
-    padding: 20px;
+    padding: 1rem;
     width: 300px;
     margin: 0px auto;
     align-self: baseline;
@@ -17,8 +17,8 @@
   
 
   .days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 5px;
     text-align: center;
   }
