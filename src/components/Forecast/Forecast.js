@@ -25,7 +25,7 @@ const Forecast = async (element, data) => {
     const li = `
     <li class="card">
       <div class="left-side-card">
-        <span>${icons[newData.iconCode[i]]}</span>
+        <span class="weather-icon">${icons[newData.iconCode[i]]}</span>
         <span class="temp-box max">+${Math.round(newData.maxTemp[i])}&deg</span>
         <span class="temp-box min">/+${Math.round(newData.minTemp[i])}&deg</span>
       </div>
