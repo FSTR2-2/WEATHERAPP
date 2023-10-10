@@ -39,8 +39,7 @@ document.addEventListener("search", async (e) => {
 	await renderComponents(city);
 });
 
-document.addEventListener('toggleDegree', (e) => {
-	const degreeType = e.detail.degreeType;
+document.addEventListener('toggledegree', (e) => {
 	renderComponents(city)
 })
 

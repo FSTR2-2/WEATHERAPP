@@ -1,48 +1,42 @@
 import "./DegreeSwitch.css";
 
 const DegreeSwitch = (element) => {
+	let degreeType = JSON.parse(localStorage.getItem("degreeType"));
 
-	let degreeType;
-
-	function renderElement() {
+	if (!degreeType) {
+		localStorage.setItem("degreeType", JSON.stringify("C"));
 		degreeType = JSON.parse(localStorage.getItem("degreeType"));
-
-		element.innerHTML = `
-  <button id="degreeBtn">
-    <div id="toggleKey" class="${degreeType === 'C' ? 'left' : 'right'}"></div>
-    <span id="celsiusSide" class="degree-btn ${
-		degreeType === "C" && "selected" 
-	}">&degC</span>
-    <span id="fahrenheitSide" class="degree-btn ${
-		degreeType === "F" && "selected" 
-	}">&degF</span>
-  </button>
- `;
 	}
 
-	renderElement();
+	element.innerHTML = `
+		<div id="degreeToggle" class=${degreeType === "C" ? "active" : ""}>
+			<div id="degreeCycle"></div>
+			<span class=${degreeType === "C" ? "active" : ""}>&deg;C</span>
+			<span class=${degreeType === "F" ? "active" : ""}>&deg;F</span>
+		</div>
+	`;
 
-	const toggleBtn = document.querySelector("#degreeBtn");
-	toggleBtn.addEventListener("click", handleDegreeToggle);
+	const degreeToggle = document.querySelector("#degreeToggle");
+	const degreeLetters = degreeToggle.querySelectorAll("span");
 
-	
+	degreeToggle.addEventListener("click", handleDegreeToggle);
+
 	function handleDegreeToggle() {
-		if (degreeType === "F") {
-			localStorage.setItem("degreeType", JSON.stringify("C"));
-		} else {
-			localStorage.setItem("degreeType", JSON.stringify("F"));
-		}
-		
-		// const toggleKey = document.querySelector('#toggleKey')
-		// toggleKey.style.left = degreeType === 'C' ? '0' : '43%'
+		degreeToggle.classList.toggle("active");
+		degreeLetters.forEach((letter) => {
+			letter.classList.toggle("active");
+		});
 
-		const toggleDegreeTypeEvent = new CustomEvent("toggleDegree", {
+		const itemToSet = degreeType === "C" ? "F" : "C";
+		localStorage.setItem("degreeType", JSON.stringify(itemToSet));
+
+		const toggleDegreeTypeEvent = new CustomEvent("toggledegree", {
 			detail: { degreeType },
 		});
 
-		document.dispatchEvent(toggleDegreeTypeEvent);
-
-		renderElement();
+		setTimeout(() => {
+			document.dispatchEvent(toggleDegreeTypeEvent);
+		}, 250)
 	}
 };
 
