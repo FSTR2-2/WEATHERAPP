@@ -20,6 +20,7 @@ const Navbar = async (element) => {
   element.innerHTML = `
   <div>
    Navbar
+   
   </div>
  `;
 };
