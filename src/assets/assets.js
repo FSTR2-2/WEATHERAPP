@@ -20,6 +20,7 @@ import Rainy from "./Vectors/Rainy.svg";
 import Snow from "./Vectors/Snow.svg";
 import Sunny from "./Vectors/Sunny.svg";
 import Thunder3 from "./Vectors/Thunder3.svg";
+import Today from "./Vectors/Today.svg";
 
 const assets = {
  bg: {
@@ -73,6 +74,7 @@ const assets = {
   Snow: Snow,
   Sunny: Sunny,
   Thunder3: Thunder3,
+  Today: Today,
   0: Sunny,
   1: PartialCloud,
   2: PartialCloud,
