@@ -7,7 +7,10 @@ const UvIndex = async (element, data) => {
   const uvArray = [];
   const hours = currentHour + 5;
   const uv = data.hourly.uv_index[currentHour];
-  
+  const uvindexList = data.hourly.uv_index.filter((item,index)=>{
+    return ((currentHour <= index) && (currentHour +5 >= index)) ;
+  })
+
   function colorPicker(uv){
     const uvColor = ["#3CD087","#F97F2A","#EF4902","#964b00","#6b0063"];
     const colorUvs = document.querySelectorAll(".card-uv");
@@ -15,7 +18,7 @@ const UvIndex = async (element, data) => {
     const title = document.querySelector(".color2-uv");
     const textInfo = document.querySelector(".info-text-uv");
     
-    let colors = (
+    const color = (
         uv >= 0 && uv <= 2 ? uvColor[0] :
         uv > 2 && uv <= 5 ? uvColor[1] :
         uv > 5 && uv <= 7 ? uvColor[2] :
@@ -23,21 +26,21 @@ const UvIndex = async (element, data) => {
         uv > 10 && uv <= 20 ? uvColor[4] :
         "#3CD087"
         );
-        colorUvs.forEach((colorUv) => {
-            let colors = (
-              uv >= 0 && uv <= 2 ? uvColor[0] :
-              uv > 2 && uv <= 5 ? uvColor[1] :
-              uv > 5 && uv <= 7 ? uvColor[2] :
-              uv > 7 && uv <= 10 ? uvColor[3] :
-              uv > 10 && uv <= 20 ? uvColor[4] :
-              "#3CD087"
-            );
-        
-            colorUv.style.backgroundColor = colors;
-            
-          });
-    iconColor.style.color = colors;
-    title.style.color = colors;
+
+    const colors = uvindexList.map((item)=>{
+      return item >= 0 && item <= 2 ? uvColor[0] :
+      item > 2 && item <= 5 ? uvColor[1] :
+      item > 5 && item <= 7 ? uvColor[2] :
+      item > 7 && item <= 10 ? uvColor[3] :
+      item > 10 && item <= 20 ? uvColor[4] :
+      "#3CD087"
+    })
+    colorUvs.forEach((colorUv,index) => {
+      colorUv.style.backgroundColor = colors[index];
+    });
+    
+    iconColor.style.color = color;
+    title.style.color = color;
     title.textContent = (
         uv >= 0 && uv <= 2 ? "Good" :
         uv > 2 && uv <= 5 ? "Fair" :
