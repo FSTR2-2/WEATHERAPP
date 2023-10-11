@@ -1,0 +1,61 @@
+#navbar {
+  padding-top: 0px;
+}
+#navbar .main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding-top: 40%;
+  gap: 4rem;
+  align-items: center;
+}
+#navbar .main .app {
+  background-color: #f97f2a;
+  border-radius: 30%;
+  filter: drop-shadow(0px 4px 4px #393737);
+}
+#navbar .main .app,
+#navbar .main .marker,
+#navbar .main .map {
+  width: 60px;
+  height: 60px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 2.5rem;
+}
+#navbar .main .app:hover,
+#navbar .main .marker:hover,
+#navbar .main .map:hover {
+  transform: scale(1.1);
+}
+#navbar .main .coffe {
+  order: 2;
+  text-align: center;
+  justify-self: flex-end;
+  margin-top: auto;
+  margin-bottom: 20px;
+  color: #393737;
+  font-size: 2.7rem;
+  transition: 0.2s;
+}
+#navbar .main .coffe:hover {
+  transform: scale(1.1);
+}
+#navbar .main .app,
+#navbar .main .marker,
+#navbar .main .map {
+  order: 1;
+}
+
+@media (max-width: 768px) {
+  .app,
+  .coffe,
+  .map,
+  .marker,
+  .coffe {
+    font-size: 1.75rem;
+  }
+}
+
+/*# sourceMappingURL=Navbar.css.map */
