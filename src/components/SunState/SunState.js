@@ -25,9 +25,9 @@ const SunState = (element, data) => {
         </div>
       </div>
       <div class="inner-container">
-        <header>Sunrise</header>
+        <header>Sunset</header>
         <div>
-          <i class="fi fi-rr-sunrise-alt"></i>
+          <i class="fi fi-rr-sunset"></i>
           <p>
             ${currentDate.sunset.hour}:${currentDate.sunset.minute}<span>pm</span>
           </p>
