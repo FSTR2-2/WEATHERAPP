@@ -1,96 +1,98 @@
-import "./Calender.css";
-
+import assets from "../../assets/assets";
+import "./Calendar.css";
 
 const Calendar = (element) => {
-    const daysInMonth = new Date().getDate();
-    const currentDay = new Date().getDay();
-    const monthNames = [
-      'January', 'February', 'March', 'April', 'May', 'June',
-      'July', 'August', 'September', 'October', 'November', 'December'
-    ];
-    const currentDate = new Date();
-    const month = monthNames[currentDate.getMonth()];
-  
-    const calendarHTML = `
+	element.innerHTML = `
+    <div class="wrapper">
+      <header>
+        <p class="current-date">September 2023</p>
+      </header>
       <div class="calendar">
-        <div class="month">${month}</div>
-        <div class="days" id="days"></div>
+        <ul class="week-days">
+          <li>Sun</li>
+          <li>Mon</li>
+          <li>Tue</li>
+          <li>Web</li>
+          <li>Thu</li>
+          <li>Fri</li>
+          <li>Sat</li>
+        </ul>
+        <ul class="days"></ul>
       </div>
-    `;
+    </div>
+  `;
 
+	const currentDate = document.querySelector(".current-date");
+	const daysUl = document.querySelector(".days");
+	let date = new Date(),
+		currentYear = date.getFullYear(),
+		currentMonth = date.getMonth();
 
-    const selectedDateDisplay = document.createElement('div');
-    selectedDateDisplay.id = 'selectedDateDisplay';
-    element.appendChild(selectedDateDisplay);
+	const months = [
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December",
+	];
 
-  function updateSelectedDateDisplay() {
-    if (selectedDate) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      selectedDateDisplay.innerText = selectedDate.toLocaleDateString(undefined, options);
-    } else {
-      selectedDateDisplay.innerText = 'No date selected';
-    }
-  }
-  
-    element.innerHTML = calendarHTML;
-  
-    const daysElement = element.querySelector('#days');
+	const renderCalendar = () => {
+		let firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+		console.log(firstDayOfMonth);
+		let lastDateOfMonth = new Date(
+			currentYear,
+			currentMonth + 1,
+			0
+		).getDate();
+		let lastDayOfMonth = new Date(
+			currentYear,
+			currentMonth,
+			lastDateOfMonth
+		).getDay();
+		let lastDateOfLastMonth = new Date(
+			currentYear,
+			currentMonth,
+			0
+		).getDate();
+		let listOfDays = "";
 
-    let selectedDate = new Date(); // Initialize with the current date
+		for (let i = firstDayOfMonth; i > 0; i--) {
+			listOfDays += `<li class="day inactive">${
+				lastDateOfLastMonth - i
+			}</li>`;
+		}
 
-  
-    function createCalendar() {
-      const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
-  
-      daysElement.innerHTML = '';
+		for (let i = 1; i <= lastDateOfMonth; i++) {
+			let isToday = i === date.getDate();
+			if (isToday) {
+				listOfDays += `
+        <li class="day today">
+          ${i}
+          <img src=${assets.vectors.Today} />
+        </li>`;
+			} else {
+				listOfDays += `<li class="day">${i}</li>`;
+			}
+		}
 
-      const currentDay = new Date().getDate();
-      const firstHighlightedDay = Math.max(currentDay, 1);
-      const lastHighlightedDay = Math.min(currentDay + 9, daysInMonth);
-  
-      for (let i = 1; i <= daysInMonth; i++) {
-        const dayElement = document.createElement('div');
-        dayElement.classList.add('day');
-        dayElement.innerText = i;
+		for (let i = lastDayOfMonth; i < 6; i++) {
+			listOfDays += `<li class="day inactive">${
+				i - lastDayOfMonth + 1
+			}</li>`;
+		}
 
+		currentDate.innerText = `${months[currentMonth]} ${currentYear}`;
+		daysUl.innerHTML = listOfDays;
+	};
 
-  
-        if (i === new Date().getDate() && currentDate.getMonth() === new Date().getMonth()) {
-            dayElement.classList.add('current-day');
-          } else if (i >= firstHighlightedDay && i <= lastHighlightedDay) {
-            dayElement.classList.add('highlighted-day');
-          }
-      
-  
-        daysElement.appendChild(dayElement);
-      }
-       
-    }
-
-    function registerDayClickEvents() {
-        const daysElement = element.querySelector('.days');  // Update to target the correct element
-        daysElement.addEventListener('click', (event) => {
-          const dayElement = event.target;
-          if (dayElement.classList.contains('highlighted-day') || dayElement.classList.contains('current-day')) {
-            const index = Array.from(daysElement.children).indexOf(dayElement);
-            selectedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), index + 1);
-            updateSelectedDateDisplay(selectedDate);
-      
-            // Remove previously selected day highlight
-            const previouslySelectedDay = daysElement.querySelector('.selected-day');
-            if (previouslySelectedDay) {
-              previouslySelectedDay.classList.remove('selected-day');
-            }
-      
-            // Highlight the newly selected day
-            dayElement.classList.add('selected-day');
-          }
-        });
-      }
-      
-      createCalendar();
-      updateSelectedDateDisplay();
-      registerDayClickEvents();
-  };
+	renderCalendar();
+};
 
 export default Calendar;
