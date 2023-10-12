@@ -52,6 +52,10 @@ a {
     background-color: $background-color-dark;
     color: $text-color-dark;
   }
+
+  @media  screen and (max-width: 1200px) {
+    padding: 0;
+  }
 }
 
 #app-container {

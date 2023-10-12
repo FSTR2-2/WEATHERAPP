@@ -47,6 +47,11 @@ a {
   background-color: #393737;
   color: #ececec;
 }
+@media screen and (max-width: 1200px) {
+  #app {
+    padding: 0;
+  }
+}
 
 #app-container {
   width: 100%;
