@@ -22,7 +22,8 @@ const Navbar = async (element) => {
   <i class="fi fi-rr-apps app"> </i>
   <i class="fi fi-rr-marker marker"></i>
   <i class="fi fi-rr-map map"></i>
-  <a class="coffe" href="https://www.buymeacoffee.com/vetheksys" target="_blank"><i class="fi fi-rr-mug-hot"></i></a>
+  <a class="coffe" href="https://www.buymeacoffee.com/vetheksys" target="_blank"><i class="fi fi-rr-mug-hot"></i>
+  <span class="buy">Buy me a coffe</span></a>
   </div>
   `;
 };

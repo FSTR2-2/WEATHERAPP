@@ -31,14 +31,27 @@
       text-align: center;
       justify-self: flex-end;
       margin-top: auto;
-      margin-bottom: 20px;
+      margin-bottom: 40%;
       color: #393737;
       font-size: 2.7rem;
       transition: 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: min-content;
+      .buy {
+        
+        order: 2;
+        font-family: Montserrat;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+      }
       &:hover {
         transform: scale(1.1);
       }
     }
+    
     .app,
     .marker,
     .map {
