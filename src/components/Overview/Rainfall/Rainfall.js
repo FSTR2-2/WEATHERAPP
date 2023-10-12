@@ -6,6 +6,9 @@ const Rainfall = async (element, data) => {
   const rfArray = [];
   const hours = currentHour + 5;
   const rf = data.hourly.precipitation_probability[currentHour];
+  const rainfallList = data.hourly.precipitation_probability.filter((item,index)=>{
+    return ((currentHour <= index) && (currentHour +5 >= index)) ;
+  })
   console.log(rf);
   function colorPicker(rf) {
     const rfColor = ["#77BEFF", "#2898FF", "#0472D9", "#032F9E", "#010E52"];
@@ -14,26 +17,27 @@ const Rainfall = async (element, data) => {
     const title = document.querySelector(".color2-rf");
     const textInfo = document.querySelector(".info-text-rf");
 
-    let colors =
-        rf >= 0 && rf <= 2? rfColor[0]
-        : rf > 2 && rf <= 5? rfColor[1]
-        : rf > 5 && rf <= 7? rfColor[2]
-        : rf > 7 && rf <= 10? rfColor[3]
-        : rf > 10 && rf <= 20? rfColor[4]
+    let color =
+        rf >= 0 && rf <= 20? rfColor[0]
+        : rf > 20 && rf <= 40? rfColor[1]
+        : rf > 40 && rf <= 60? rfColor[2]
+        : rf > 60 && rf <= 80? rfColor[3]
+        : rf > 80 && rf <= 100? rfColor[4]
         : "#3CD087";
-    colorRfs.forEach((colorRf) => {
-        let colors =
-        rf >= 0 && rf <= 2? rfColor[0]
-        : rf > 2 && rf <= 5? rfColor[1]
-        : rf > 5 && rf <= 7? rfColor[2]
-        : rf > 7 && rf <= 10? rfColor[3]
-        : rf > 10 && rf <= 20? rfColor[4]
+    const colors = rainfallList.map((item) => {
+        return item >= 0 && item <= 20? rfColor[0]
+        : item > 20 && item <= 40? rfColor[1]
+        : item > 40 && item <= 60? rfColor[2]
+        : item > 60 && item <= 80? rfColor[3]
+        : item > 80 && item <= 100? rfColor[4]
         : "#3CD087";
-
-        colorRf.style.backgroundColor = colors;
     });
-    iconColor.style.color = colors;
-    title.style.color = colors;
+    colorRfs.forEach((colorRf,index)=>{
+        colorRf.style.backgroundColor = colors[index];
+    })
+    
+    iconColor.style.color = color;
+    title.style.color = color;
     title.textContent =
         rf >= 0 && rf <= 20? "Dry (0-20%)"
         : rf > 20 && rf <= 40? "Low (20-40%)"
