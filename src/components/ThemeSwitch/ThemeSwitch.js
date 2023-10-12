@@ -1,25 +1,25 @@
-import './ThemeSwitch.css'
+import "./ThemeSwitch.css";
 
 const ThemeSwitch = (element) => {
- element.innerHTML = `
-  <div class="darkmode-btn">
-    <div class="cycle"></div>
+	let darkMode = JSON.parse(localStorage.getItem("darkMode"));
+	if (!darkMode) {
+		darkMode = "active";
+		localStorage.setItem("darkMode", JSON.stringify(darkMode));
+	}
+
+	element.innerHTML = `
+  <div id="darkModeToggle" class="${darkMode}">
+    <div class="indicator"></div>
   </div>
+  
  `;
 
-  const darkmodeBtn = document.querySelector('.darkmode-btn');
-  const darkmodeCycle = darkmodeBtn.querySelector('.cycle')
-
-  darkmodeBtn.addEventListener('click', handleDarkMode)
-
- function handleDarkMode() {
-  console.log(darkmodeBtn, darkmodeCycle)
-  darkmodeBtn.classList.toggle('active')
-
- }
-
- 
-}
-
+	const toggle = document.getElementById("darkModeToggle");
+	toggle.onclick = function () {
+		toggle.classList.toggle("active");
+		darkMode = darkMode === "active" ? "passive" : "active";
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+	};
+};
 
 export default ThemeSwitch;
